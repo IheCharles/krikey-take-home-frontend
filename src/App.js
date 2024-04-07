@@ -5,28 +5,46 @@ function App() {
   return (
     <>
       <nav className="navigation-bar">
-        <img src={krikeyLogo} alt="Krikey Logo" className="navbar-logo" />
-        <div className="nav-links">
-          <div className="nav-item">
-            How to Animate{" "}
-            <img src={chevronDownIcon} alt="Expand" className="chevron-down" />
+        <div className="nav-content">
+          <img src={krikeyLogo} alt="Krikey Logo" className="navbar-logo" />
+          <div className="nav-links">
+            <div className="nav-item">
+              How to Animate{" "}
+              <img
+                src={chevronDownIcon}
+                alt="Expand"
+                className="chevron-down"
+              />
+            </div>
+            <div className="nav-item">
+              Business{" "}
+              <img
+                src={chevronDownIcon}
+                alt="Expand"
+                className="chevron-down"
+              />
+            </div>
+            <div className="nav-item">
+              Education{" "}
+              <img
+                src={chevronDownIcon}
+                alt="Expand"
+                className="chevron-down"
+              />
+            </div>
+            <div className="nav-item">
+              Social Media{" "}
+              <img
+                src={chevronDownIcon}
+                alt="Expand"
+                className="chevron-down"
+              />
+            </div>
+            <div className="nav-item">Pricing</div>
+            <div className="nav-item">About Us</div>
           </div>
-          <div className="nav-item">
-            Business{" "}
-            <img src={chevronDownIcon} alt="Expand" className="chevron-down" />
-          </div>
-          <div className="nav-item">
-            Education{" "}
-            <img src={chevronDownIcon} alt="Expand" className="chevron-down" />
-          </div>
-          <div className="nav-item">
-            Social Media{" "}
-            <img src={chevronDownIcon} alt="Expand" className="chevron-down" />
-          </div>
-          <div className="nav-item">Pricing</div>
-          <div className="nav-item">About Us</div>
+          <button className="nav-cta">Get Started</button>
         </div>
-        <button className="nav-cta">Get Started</button>
       </nav>
 
       <div class="team-members-container">
