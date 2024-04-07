@@ -9,7 +9,6 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
 }
 
 .nav-content {
@@ -19,33 +18,34 @@
   padding: 1rem;
 }
 
-.team-members-container {
-  width: 100%;
+.members-container {
+  min-width: 30rem;
+  width: 25%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.team-members-header {
+.members-header {
   padding: 16px;
+
   border-bottom: 1px solid #e1e1e1;
   display: flex;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.back-arrow {
-  font-size: 24px;
-  margin-right: 16px;
-  cursor: pointer;
-}
-
-.team-members-list {
+.members-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.team-member {
+.member {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,8 +58,12 @@
   width: 40px;
   height: 40px;
   margin-right: 16px;
+  flex-shrink: 0;
 }
-
+.member-info {
+  order: 1;
+  flex-grow: 1;
+}
 .member-info h3 {
   margin: 0;
   color: #333;
@@ -70,46 +74,23 @@
   color: #666;
 }
 
-.remove-member-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-}
 .navigation-bar {
   height: 100w;
   width: auto;
-  background-color: white;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  font-weight: 500;
-}
-
-.nav-cta {
+.get-started {
   background-image: linear-gradient(to right, #4a45d6, #13a7ba);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   margin: 0rem 8rem;
-  cursor: pointer;
-  font-weight: 500;
-  text-align: center;
-  display: inline-block;
-  transition: background 0.3s ease;
 }
 
 .navbar-logo {
@@ -125,4 +106,16 @@
   margin-left: 8px;
   width: 1em;
   height: 1em;
+}
+.back-arrow {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 16px;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+}
+
+.card-title {
+  margin-top: 40px;
 }

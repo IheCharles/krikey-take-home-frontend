@@ -1,7 +1,29 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import krikeyLogo from "./krikey_logo.png";
 import chevronDownIcon from "./ChevronDownIcon.svg";
+import ArrowLeftIcon from "./ArrowLeftIcon.svg";
+import coolcat from "./coolcat.png";
 function App() {
+  const [authors, setAuthors] = useState([]);
+
+  useEffect(() => {
+    const fetchAuthors = async () => {
+      try {
+        const response = await fetch(
+          "https://kirkey-take-home-4122bf1496ba.herokuapp.com/"
+        );
+        if (!response.ok) throw new Error("Data could not be fetched!");
+        const data = await response.json();
+        setAuthors(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchAuthors();
+  }, []);
+
   return (
     <>
       <nav className="navigation-bar">
@@ -43,64 +65,30 @@ function App() {
             <div className="nav-item">Pricing</div>
             <div className="nav-item">About Us</div>
           </div>
-          <button className="nav-cta">Get Started</button>
+          <button className="get-started">Get Started</button>
         </div>
       </nav>
 
-      <div class="team-members-container">
-        <div class="team-members-header">
-          <span class="back-arrow">&larr;</span>
-          <h2>You have 12 Team Members</h2>
+      <div class="members-container">
+        <div class="members-header">
+          <img src={ArrowLeftIcon} alt="Expand" className="back-arrow" />
+
+          <h2 className="card-title">You have {authors.length} Team Members</h2>
         </div>
-        <ul class="team-members-list">
-          <li class="team-member">
-            <img
-              src="avatar.png"
-              alt="Jenny Appleseed"
-              class="member-avatar"
-            ></img>
-            <div class="member-info">
-              <h3>Jenny Appleseed</h3>
-              <p>jenny.appleseed@example.com</p>
-            </div>
-            <button class="remove-member-button">&times;</button>
-          </li>
-          <li class="team-member">
-            <img
-              src="avatar.png"
-              alt="Jenny Appleseed"
-              class="member-avatar"
-            ></img>
-            <div class="member-info">
-              <h3>Jenny Appleseed</h3>
-              <p>jenny.appleseed@example.com</p>
-            </div>
-            <button class="remove-member-button">&times;</button>
-          </li>
-          <li class="team-member">
-            <img
-              src="avatar.png"
-              alt="Jenny Appleseed"
-              class="member-avatar"
-            ></img>
-            <div class="member-info">
-              <h3>Jenny Appleseed</h3>
-              <p>jenny.appleseed@example.com</p>
-            </div>
-            <button class="remove-member-button">&times;</button>
-          </li>
-          <li class="team-member">
-            <img
-              src="avatar.png"
-              alt="Jenny Appleseed"
-              class="member-avatar"
-            ></img>
-            <div class="member-info">
-              <h3>Jenny Appleseed</h3>
-              <p>jenny.appleseed@example.com</p>
-            </div>
-            <button class="remove-member-button">&times;</button>
-          </li>
+        <ul className="members-list">
+          {authors.map((author, index) => (
+            <li key={index} className="member">
+              <img
+                src={coolcat}
+                alt="A cool cat"
+                className="member-avatar"
+              ></img>
+              <div className="member-info">
+                <h3>{author.author_name}</h3>
+                <p>Total Revenue: ${author.total_revenue}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </>
