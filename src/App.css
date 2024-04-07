@@ -1,0 +1,121 @@
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 40rem;
+  background-color: #fff;
+  position: fixed; /* Keep navigation bar at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.team-members-container {
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto; /* Center container on the page with auto margins */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative; /* This will ensure it respects the body's padding */
+  top: 20px; /* This will push it down a bit from the nav bar */
+}
+
+.team-members-header {
+  padding: 16px;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+}
+
+.back-arrow {
+  font-size: 24px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.team-members-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.member-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.member-info h3 {
+  margin: 0;
+  color: #333;
+}
+
+.member-info p {
+  margin: 4px 0 0;
+  color: #666;
+}
+
+.remove-member-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+.navigation-bar {
+  height: 100w;
+  width: auto;
+  background-color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-cta {
+  background-color: #0067f4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.navbar-logo {
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 1rem; /* Add some space between the logo and the links */
+}
+.nav-item {
+  /* Your styles for nav item */
+  display: flex;
+  align-items: center;
+  /* other styles */
+}
+
+.chevron-down {
+  margin-left: 8px; /* Adjust spacing as needed */
+  width: 1em; /* Adjust size as needed */
+  height: 1em; /* Adjust size as needed */
+}
