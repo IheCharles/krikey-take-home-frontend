@@ -4,7 +4,17 @@ import krikeyLogo from "./krikey_logo.png";
 import chevronDownIcon from "./ChevronDownIcon.svg";
 import ArrowLeftIcon from "./ArrowLeftIcon.svg";
 import coolcat from "./coolcat.png";
+import { initializeApp } from "firebase/app";
 function App() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyDbaKNViVQCeALIU9yZlGTD3YT5wkqVWd8",
+    authDomain: "krikey-take-home.firebaseapp.com",
+    projectId: "krikey-take-home",
+    storageBucket: "krikey-take-home.appspot.com",
+    messagingSenderId: "891521789496",
+    appId: "1:891521789496:web:ebf3a6087df41e085500cd",
+  };
+  const app = initializeApp(firebaseConfig);
   const [authors, setAuthors] = useState([]);
 
   useEffect(() => {
